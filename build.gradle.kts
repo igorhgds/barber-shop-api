@@ -1,12 +1,12 @@
 import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.util.*
+        import java.time.format.DateTimeFormatter
+        import java.util.*
 
-plugins {
-    java
-    id("org.springframework.boot") version "4.0.1"
-    id("io.spring.dependency-management") version "1.1.7"
-}
+        plugins {
+            java
+            id("org.springframework.boot") version "3.4.2"
+            id("io.spring.dependency-management") version "1.1.7"
+        }
 
 group = "henrique.igor"
 version = "0.0.1-SNAPSHOT"
@@ -32,9 +32,9 @@ var mapStructVersion = "1.6.3"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-flyway")
     implementation("org.springframework.boot:spring-boot-starter-validation")
-    implementation("org.springframework.boot:spring-boot-starter-webmvc")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.flywaydb:flyway-core")
     implementation("org.flywaydb:flyway-database-postgresql")
     implementation("org.mapstruct:mapstruct:$mapStructVersion")
 
@@ -48,10 +48,7 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok-mapstruct-binding:0.2.0")
     annotationProcessor("org.projectlombok:lombok")
 
-    testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
-    testImplementation("org.springframework.boot:spring-boot-starter-flyway-test")
-    testImplementation("org.springframework.boot:spring-boot-starter-validation-test")
-    testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
@@ -94,4 +91,3 @@ tasks.register("generateFlywayMigrationFile"){
 
     }
 }
-
