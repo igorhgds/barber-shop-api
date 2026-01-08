@@ -23,7 +23,7 @@ public class Schedule {
     private OffsetDateTime startAt;
 
     @Column(nullable = false, name = "end_at")
-    private OffsetDateTime endtAt;
+    private OffsetDateTime endAt;
 
     @ToString.Exclude
     @ManyToOne
@@ -35,11 +35,11 @@ public class Schedule {
         if (!(o instanceof Schedule schedule)) return false;
         return Objects.equals(id, schedule.id)
                 && Objects.equals(startAt, schedule.startAt)
-                && Objects.equals(endtAt, schedule.endtAt);
+                && Objects.equals(endAt, schedule.endAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, startAt, endtAt);
+        return Objects.hash(id, startAt, endAt);
     }
 }
