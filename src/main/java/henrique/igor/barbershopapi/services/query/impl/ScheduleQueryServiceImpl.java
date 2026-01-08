@@ -30,7 +30,7 @@ public class ScheduleQueryServiceImpl implements ScheduleQueryService {
 
     @Override
     public void verifyIfScheduleExists(OffsetDateTime startAt, OffsetDateTime endAt) {
-        if (scheduleRepository.existsByStartAtAndEndAt(startAt, endAt)){
+        if (scheduleRepository.existsOverlapping(startAt, endAt)){
             var message = "Já Existe um cliente agendado no horário solicitado";
             throw new ScheduleAlreadyUsedException(message);
         }
