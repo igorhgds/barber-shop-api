@@ -2,7 +2,7 @@ package henrique.igor.barbershopapi.services;
 
 import henrique.igor.barbershopapi.entities.Client;
 
-public interface ClientService {
+public interface IClientService {
 
     Client save(final Client entity);
 

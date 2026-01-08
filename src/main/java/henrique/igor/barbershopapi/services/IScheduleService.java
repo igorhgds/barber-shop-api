@@ -2,7 +2,7 @@ package henrique.igor.barbershopapi.services;
 
 import henrique.igor.barbershopapi.entities.Schedule;
 
-public interface ScheduleService {
+public interface IScheduleService {
 
     Schedule save(final Schedule entity);
 
